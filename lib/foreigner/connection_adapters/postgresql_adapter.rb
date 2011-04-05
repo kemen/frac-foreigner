@@ -23,6 +23,21 @@ module Foreigner
         execute "ALTER TABLE #{table} DROP CONSTRAINT #{constraint_name}"
       end      
 
+      def pk(table_name)
+        pk_info = select_all %{
+          select c.COLUMN_NAME as pk
+            from INFORMATION_SCHEMA.TABLE_CONSTRAINTS pk, INFORMATION_SCHEMA.KEY_COLUMN_USAGE c
+            where pk.TABLE_NAME = '#{table_name}'
+            and	CONSTRAINT_TYPE = 'PRIMARY KEY'
+            and	c.TABLE_NAME = pk.TABLE_NAME
+            and	c.CONSTRAINT_NAME = pk.CONSTRAINT_NAME
+        }
+        pk_info.map do |row|
+          options = {:pk => row['pk']}
+          options
+        end
+      end
+
       def foreign_keys(table_name)
         fk_info = select_all %{
           SELECT tc.constraint_name as name
