@@ -14,12 +14,12 @@ module Foreigner
       end
 
       def add_primary_key(table,options)
-        constraint_name = "pk_#{table}_#{options[:column]}"
+        constraint_name = "pk_#{table}}"
         execute "ALTER TABLE #{table} ADD CONSTRAINT #{constraint_name} PRIMARY KEY (#{options[:column]})"
       end
 
       def remove_primary_key(table, options)
-        constraint_name = "pk_#{table}_#{options[:column]}"
+        constraint_name = "pk_#{table}}"
         execute "ALTER TABLE #{table} DROP CONSTRAINT #{constraint_name}"
       end      
 
