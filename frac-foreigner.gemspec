@@ -2,14 +2,14 @@
  
 Gem::Specification.new do |s|
   s.name = 'frac-foreigner'
-  s.version = '0.0.3'
-  s.summary = 'Foreigner adapted to SQLServer and with natural primay key support for schema dumper and migrations'
-  s.description = 'Foreigner adapted to SQLServer and with natural primay key support for schema dumper and migrations'
+  s.version = '0.0.4'
+  s.summary = 'Foreigner adapted to SQLServer and with natural primary key support for schema dumper and migrations'
+  s.description = 'Foreigner adapted to SQLServer and with natural primary key support for schema dumper and migrations'
 
   s.required_ruby_version     = '>= 1.8.6'
   s.required_rubygems_version = '>= 1.3.5'
 
-  s.author            = 'Cloned by Matthew Higgins'
+  s.author            = 'Cloned from Matthew Higgins\' Foreigner gem'
   s.email             = ''
   s.homepage          = 'http://www.kemen.it'
   s.rubyforge_project = 'frac-foreigner'
