@@ -2,7 +2,7 @@
  
 Gem::Specification.new do |s|
   s.name = 'frac-foreigner'
-  s.version = '0.0.4'
+  s.version = '0.0.5'
   s.summary = 'Foreigner adapted to SQLServer and with natural primary key support for schema dumper and migrations'
   s.description = 'Foreigner adapted to SQLServer and with natural primary key support for schema dumper and migrations'
 

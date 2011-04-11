@@ -10,8 +10,10 @@ module Foreigner
 
     module InstanceMethods
       def tables_with_foreign_keys(stream)
-        @connection.tables.sort.each do |table|
-          remove_foreign_keys(table, stream)
+        if ActiveRecord::ConnectionAdapters.const_defined?(:SQLServerAdapter)
+          @connection.tables.sort.each do |table|
+            remove_foreign_keys(table, stream)
+          end
         end
         tables_without_foreign_keys(stream)
         @connection.tables.sort.each do |table|
